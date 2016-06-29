@@ -4,6 +4,7 @@ Build script for Open-source Apple swift language on fedora 23 x64 Linux distrib
 还要添加的库:
 参考下面这个
 http://www.swiftprogrammer.info/swift_centos_1.html
+yum 安装的cmake版本不够。请下载最新的cmake。
 
 ## About
 This script has been tested on fedora 23, and successfully builds the swift compiler and ecosystem, it creates an install package which is in the same layout as the supplied ubuntu install tar files, but build against the fedora 23 shared libraries. 
