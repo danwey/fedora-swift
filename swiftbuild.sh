@@ -42,7 +42,7 @@ case "$1" in
 
 
   "setup" )  echo "Setup build enviroment"
-    sudo dnf install -y --best --allowerasing \
+    sudo yum install -y --best --allowerasing \
     git \
     cmake \
     ninja-build \
@@ -149,8 +149,8 @@ case "$1" in
   mkdir -p $BUILDROOT/package
   mkdir -p $BUILDROOT/symroot
 
-  if [ -f  "$BUILDROOT/package/swift-linux-x86_64-fedora-$NOW.tgz" ] ; then
-    rm "$BUILDROOT/package/swift-linux-x86_64-fedora-$NOW.tgz"
+  if [ -f  "$BUILDROOT/package/swift-linux-x86_64-centos-$NOW.tgz" ] ; then
+    rm "$BUILDROOT/package/swift-linux-x86_64-centos-$NOW.tgz"
   fi
 
   mkdir -p $BUILDROOT/build/buildbot_linux/lldb-linux-x86_64/lib
@@ -164,10 +164,10 @@ case "$1" in
 
   pushd $BUILDROOT/swift
     utils/build-script --preset-file=$THISDIR/linuxpreset.ini \
-      --preset=buildbot_linux_build_fedora23 \
+      --preset=buildbot_linux_build_centos \
       install_destdir="$BUILDROOT/package" \
       install_symroot="$BUILDROOT/symroot" \
-      installable_package="$BUILDROOT/package/swift-linux-x86_64-fedora-$NOW.tgz" \
+      installable_package="$BUILDROOT/package/swift-linux-x86_64-centos-$NOW.tgz" \
       build_threads=$BUILDTHREADS
   popd
   ;;
@@ -177,8 +177,8 @@ case "$1" in
   mkdir -p $BUILDROOT/package
   mkdir -p $BUILDROOT/symroot
 
-  if [ -f  "$BUILDROOT/package/swift-linux-x86_64-fedora-$NOW.tgz" ] ; then
-    rm "$BUILDROOT/package/swift-linux-x86_64-fedora-$NOW.tgz"
+  if [ -f  "$BUILDROOT/package/swift-linux-x86_64-centos-$NOW.tgz" ] ; then
+    rm "$BUILDROOT/package/swift-linux-x86_64-centos-$NOW.tgz"
   fi
 
   mkdir -p $BUILDROOT/build/buildbot_linux/lldb-linux-x86_64/lib
